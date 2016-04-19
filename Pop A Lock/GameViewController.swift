@@ -2,13 +2,13 @@
 //  GameViewController.swift
 //  Pop A Lock
 //
-//  Created by Alex Retter on 3/17/16
-//  Copyright © 2016 Re.Group Apps. All rights reserved.
+//  Created by J. Ruof, Meruca on 24.09.15.
+//  Copyright (c) 2015 RuMe Academy. All rights reserved.
 //
-
 
 import UIKit
 import SpriteKit
+import iAd
 
 class GameViewController: UIViewController,GameDelegate {
     
@@ -32,6 +32,9 @@ class GameViewController: UIViewController,GameDelegate {
         super.viewDidLoad()
         
         shareButton.hidden = true
+        
+        UIViewController.prepareInterstitialAds()
+        self.interstitialPresentationPolicy = .Manual
 
         let scene = GameScene(size: view.bounds.size)
         // Configure the view.
@@ -66,6 +69,7 @@ class GameViewController: UIViewController,GameDelegate {
     func gameFinished() {
         snapPic()
         shareButton.hidden = false
+        self.requestInterstitialAdPresentation()
     }
     
     func share(image: UIImage) {

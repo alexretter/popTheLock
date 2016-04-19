@@ -2,10 +2,9 @@
 //  GameScene.swift
 //  Pop A Lock
 //
-//  Created by Alex Retter on 3/17/16
-//  Copyright © 2016 Re.Group Apps. All rights reserved.
+//  Created by J. Ruof, Meruca on 24.09.15.
+//  Copyright (c) 2015 RuMe Academy. All rights reserved.
 //
-
 
 import SpriteKit
 
@@ -193,7 +192,7 @@ class GameScene: SKScene {
         userInteractionEnabled = false
         needle.removeFromParent()
         currentScoreLabel.text = "Fail!"
-        let actionRed = SKAction.colorizeWithColor(UIColor(red: 149.0/255.0, green: 165.0/255.0, blue: 166.0/255.0, alpha: 1.0), colorBlendFactor: 1.0, duration: 0.25)
+        let actionRed = SKAction.colorizeWithColor(UIColor(red: 44.0/255.0, green: 62.0/255.0, blue: 80.0/255.0, alpha: 1.0), colorBlendFactor: 1.0, duration: 0.25)
         let actionBack = SKAction.waitForDuration(0.5)
         self.scene?.runAction(SKAction.sequence([actionRed,actionBack]), completion: { () -> Void in
             self.removeAllChildren()
